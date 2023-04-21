@@ -1,17 +1,19 @@
-name: For every push
+name: Run PHPUnit Tests on push
 
-on: push
-
+on:
+  push:
+  
 jobs:
   ci:
     runs-on: ubuntu-latest
     
     steps:
     - uses: actions/checkout@v2
+      
     - name: PHPUnit Tests
-    - uses: php-actions/phpunit@v1 
+      uses: php-actions/phpunit@v1 
       with:
-          configuration: test/phpunit.xml
-          args: --coverage-text
+        configuration: test/phpunit.xml
+        args: --coverage-tex
   
   
