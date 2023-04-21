@@ -3,9 +3,11 @@ name: For every push
 on: push
 
 jobs:
-  say-hello:
+  CI:
     runs-on: ubuntu-latest
     steps:
-    - run: echo "Success!"
+    - uses: action/checkout@v2
+    - name: PHPUnit Tests
+    - uses: php-actions/phpunit@v1 
   
   
